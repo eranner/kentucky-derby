@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horse Race 1</title>
+
+    <style>
+       /* #container {
+            height: 500px;
+            width: 800px;
+            outline: 2px solid black;
+            position: absolute;
+        }*/
+
+        @font-face {
+            font-family: marker;
+            src: url(PermanentMarker-Regular.ttf);
+        }
+            @font-face {
+                font-family: dice;
+                src: url(Jua-Regular.ttf);
+            }
+
+           
+        
+        html {
+            background-image: linear-gradient(45deg, #333, grey, rgb(187, 185, 185), white);
+        }
+        #box {
+            height: 50px;
+            width: 50px;
+
+            position: absolute;
+            top: 20px;
+            left: 100px;
+           
+        }
+
+        #box2 {
+            height: 50px;
+            width: 50px;
+            
+            position: absolute;
+            top: 140px;
+            left: 100px;
+        }
+
+        #box3 {
+            height: 50px;
+            width: 50px;
+            
+            position: absolute;
+            top: 270px;
+            left: 100px;
+
+        }
+
+        #box4 {
+            height: 50px;
+            width: 50px;
+            
+            position: absolute;
+            top: 395px;
+            left: 100px;
+        }
+
+        #box5 {
+            height: 50px;
+            width: 50px;
+            
+            position: absolute;
+            top: 520px;
+            left: 100px;
+        }
+
+        #box6 {
+            height: 50px;
+            width: 50px;
+            
+            position: absolute;
+            top: 645px;
+            left: 100px;
+        }
+        #dice {
+            font-size: 8em;
+           
+            top: 640px;
+            position: absolute;
+            font-family: dice;
+            left: 400px;
+            color: black;
+            text-shadow: 3px 3px #333;
+            height: 150px;
+            width: 150px;
+            background-color: white;
+            text-align: center;
+            border-radius: 20px;
+            border: 3px solid black;
+        }
+
+        #dice2 {
+            font-size: 8em;
+            
+            top: 640px;
+            left: 850px;
+            position: absolute;
+            font-family: dice;
+            color: black;
+            text-shadow: 3px 3px #333;
+            height: 150px;
+            width: 150px;
+            background-color: white;
+            text-align: center;
+            border-radius: 20px;
+            border: 3px solid black;
+           
+        }
+
+        #dice3 {
+            font-size: 8em;
+            
+            top: 640px;
+            position: absolute;
+            left: 1250px;
+            font-family: dice;
+            color: black;
+            text-shadow: 3px 3px #333;
+            height: 150px;
+            width: 150px;
+            background-color: white;
+            text-align: center;
+            border-radius: 20px;
+            border: 3px solid black;
+        }
+
+        #rolls {
+            position: absolute;
+            left: 100px;
+            top: 800px;
+            height: 50px;
+            width: 100px;
+            font-family: marker;
+            font-size: 2.25em;
+            text-align: center;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+            cursor: pointer;
+            border: 3px solid black;
+            border-radius: 10px;
+            
+        }
+
+        .horses {
+            height: 100px;
+            width: 100px;
+        }
+        .lane {
+            height: 125px;
+            width: 100vw;
+            outline: 2px solid black;
+            color: white;
+            font-family: marker;
+            font-size: 5em;
+            left: 20px;
+            text-shadow: 3px 3px black;
+            
+        }
+
+        #backVid {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            z-index: 100;
+        }
+
+        #playAgain {
+            position: absolute;
+            left: 1550px;
+            top: 800px;
+            height: 50px;
+            width: 100px;
+            font-family: marker;
+            font-size: 1em;
+            text-align: center;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+            cursor: pointer;
+            border: 3px solid black;
+            border-radius: 10px;
+        }
+        #nextRace {
+            position: absolute;
+            left: 1700px;
+            top: 800px;
+            height: 50px;
+            width: 100px;
+            font-family: marker;
+            font-size: 1em;
+            text-align: center;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+            cursor: pointer;
+            border: 3px solid black;
+            border-radius: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+ 
+    </style>
+</head>
+<body>
+
+
+   <div class="lane" style="color: rgb(6, 177, 6);">1<div id="box"><img class="horses" src="Images/greenHorse1.png"></div></div>
+    <div class="lane" style="color: rgb(241, 44, 44);">2<div id="box2"><img class="horses" src="Images/redHorse2.png"></div></div>
+    <div class="lane" style="color: rgb(64, 95, 194);">3<div id="box3"><img class="horses" src="Images/blueHorse3.png"></div></div>
+    <div class="lane" style="color: rgb(248, 238, 101);">4<div id="box4"><img class="horses" src="Images/yellowHorse4.png"></div></div>
+    <div class="lane" style="color: rgb(230, 174, 216);">5<div id="box5"><img class="horses" src="Images/pinkHorse5.png"></div></div>
+    <div class="lane" style="color: rgb(64, 233, 205);">6<div id="box6"><img class="horses" src="Images/aquaHorse6.png"></div></div>
+<p id="dice">?</p>
+<p id="dice2">?</p>
+<p id="dice3">?</p>
+<button id="rolls" onClick="dicey(); dicey2(); dicey3();">Roll</button>
+<button id="playAgain" onClick="location.reload();">Race again!</button>
+<button id="nextRace" onClick="window.location.href='Horse Race 2.html';">Next Race!</button>
+<audio autoplay loop>
+    <source src="William Tell_60_MP3.mp3" type="audio/mp3">
+</audio>
+
+<script>
+var margin = 100;
+var margin2 = 100;
+var margin3 = 100;
+var margin4 = 100;
+var margin5 = 100;
+var margin6 = 100;
+var i = 0;
+var m = 0;
+var n = 0;
+var o = 0;
+var p = 0;
+var q = 0;
+var r = 0;
+var guess;
+
+var message = alert('Welcome to the Woodloch Race Track! Here are 6 horses that move according to the dice roll at the bottom of the screen. Can you pick which one will win?')
+
+/*var prediction = prompt('Which horse will win?');
+if (prediction < 1 || prediction > 6) {
+    alert('Please enter a valid horse number');
+} */
+
+
+    function dicey() {
+        var i = 0;
+    var number = Math.floor((Math.random() * 6) + 1);
+var roll = document.getElementById('dice');
+roll.textContent = number;
+
+
+if (number === 1) {
+    moveBox();
+    
+    
+} 
+
+if (number === 2) {
+    moveBox2();
+    
+}
+
+if (number === 3) {
+    moveBox3();
+    
+}
+if (number === 4) {
+    moveBox4();
+    
+}
+if (number === 5) {
+    moveBox5();
+    
+}
+if (number === 6){
+    moveBox6();
+    
+}
+}
+
+   
+function dicey2() {
+        var i = 0;
+    var number = Math.floor((Math.random() * 6) + 1);
+var roll = document.getElementById('dice2');
+roll.textContent = number;
+
+
+
+if (number === 1) {
+    moveBox();
+    
+} 
+
+if (number === 2) {
+    moveBox2();
+}
+
+if (number === 3) {
+    moveBox3();
+}
+if (number === 4) {
+    moveBox4();
+}
+if (number === 5) {
+    moveBox5();
+}
+if (number === 6){
+    moveBox6();
+
+}
+
+}
+
+ 
+function dicey3() {
+        var i = 0;
+    var number = Math.floor((Math.random() * 6) + 1);
+var roll = document.getElementById('dice3');
+roll.textContent = number;
+
+if (number === 1) {
+    moveBox();
+    
+} 
+
+if (number === 2) {
+    moveBox2();
+}
+
+if (number === 3) {
+    moveBox3();
+}
+if (number === 4) {
+    moveBox4();
+}
+if (number === 5) {
+    moveBox5();
+}
+if (number === 6){
+    moveBox6();
+
+}
+}
+function checkWin() {
+        if (m > 16) {
+            var winner1 = alert('Horse 1 wins!');
+        }
+
+        
+    
+}
+
+function checkWin2() {
+        if (n > 16) {
+            alert('Horse 2 wins!');
+        }
+}
+function checkWin3() {
+        if (o > 16) {
+            alert('Horse 3 wins!');
+        }
+}
+function checkWin4() {
+        if (p > 16) {
+            alert('Horse 4 wins!');
+        }
+}
+function checkWin5() {
+        if (q > 16) {
+            alert('Horse 5 wins!');
+        }
+}
+function checkWin6() {
+        if (r > 16) {
+            alert('Horse 6 wins!');
+        }
+}
+function moveBox() {
+        margin = margin + 100;
+        document.getElementById('box').style.left = margin + "px";
+        i = i + 1;
+        console.log(i);
+        m++;
+        
+checkWin();
+
+ 
+}
+
+function moveBox2() {
+        margin2 = margin2 + 100;
+        document.getElementById('box2').style.left = margin2 + "px";
+        i = i + 1;
+        console.log(i);
+        n++;
+        
+        checkWin2();
+    
+
+ 
+}
+function moveBox3() {
+        margin3 = margin3 + 100;
+        document.getElementById('box3').style.left = margin3 + "px";
+        i = i + 1;
+        console.log(i);
+        o++;
+        
+        checkWin3();
+
+ 
+}
+
+function moveBox4() {
+        margin4 = margin4 + 100;
+        document.getElementById('box4').style.left = margin4 + "px";
+        i = i + 1;
+        console.log(i);
+        p++;
+        
+        checkWin4();
+
+ 
+}
+
+function moveBox5() {
+        margin5 = margin5 + 100;
+        document.getElementById('box5').style.left = margin5 + "px";
+        i = i + 1;
+        console.log(i);
+        q++;
+        
+        checkWin5();
+
+ 
+}
+function moveBox6() {
+        margin6 = margin6 + 100;
+        document.getElementById('box6').style.left = margin6 + "px";
+        i = i + 1;
+        console.log(i);
+        r++;
+        
+        checkWin6();
+
+ 
+}
+
+
+
+
+/*while (i < 10) {
+
+
+} */
+
+</script>
+</body>
+</html>

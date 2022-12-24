@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool</title>
+
+
+    <style>
+#board {
+    height: 500px;
+    width: 800px;
+    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+
+}
+
+#board2 {
+    height: 500px;
+    width: 800px;
+    background-color: violet;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+
+}
+
+.answer {
+    height: 200px;
+    width: 800px;
+    background-color: blue;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    position: relative;
+}
+.boxes {
+    height: 100px;
+    width: 100px;
+    background-color: #333;
+    position: relative;
+    cursor: pointer;
+    color: white;
+    font-size: 3rem;
+
+}
+
+button {
+    height: 100px;
+    width: 200px;
+    position: absolute;
+    top: 100px;
+    left: 900px;
+    font-size: 3rem;
+}
+
+#rolly {
+    font-size: 3rem;
+    position: absolute;
+    left: 900px;
+    top: 0;
+}
+
+#shitty {
+    position: absolute;
+    left: 900px;
+    top: 400px;
+    height: 100px;
+    width: 200px;
+    border-radius: 40px;
+    background-image: linear-gradient(45deg, red, orange, yellow, green, blue, violet);
+    cursor: pointer;
+}
+
+.bitch {
+    background-color: rgb(24, 176, 196);
+    height: 100px;
+    width: 100px;
+   
+    position: relative;
+    cursor: pointer;
+    color: white;
+    font-size: 3rem;
+}
+
+.learning {
+    background-color: rgb(102, 33, 33);
+    height: 100px;
+    width: 100px;
+   
+    position: relative;
+    cursor: pointer;
+    color: white;
+    font-size: 3rem;
+}
+.shrink {
+    background-color: orange;
+    height: 100px;
+    width: 100px;
+}
+
+    </style>
+</head>
+
+<body>
+    <button id='tap' style="height: 100px; width: 200px; position: absolute; left: 900px; top: 200px;"></button>
+    <div id="board">
+        <div class="boxes" id="box1">1</div>
+        <div class="boxes" id="box2" >2</div>
+        <div class="boxes" id="box3">3</div>
+        <div class="boxes" id="box4">4</div>
+        <div class="boxes" id="box5">5</div>
+        <div class="boxes" id="box6">6</div>
+    </div>
+
+    <div id="answer" class="answer">
+            <ul id="list">
+                <li>Milk</li>
+                <li>Eggs</li>
+                <li>Bread</li>
+                <li>Juice</li>
+                <li>Potatoes</li>
+            </ul>
+    </div>
+    <button id="spin" onclick="slide(); dice(); green();" onmouseover="yellow();" onmouseout="back();">ROLL!</button>
+    <div id="rolly">Roll the Dice</div>
+
+    <div id="board2">
+        <div class="boxes" id="box7" draggable = 'true' ondragstart="drag(event)">1</div>
+        <div class="boxes" id="box8" draggable = 'true'>2</div>
+        <div class="boxes" id="box9" draggable = 'true'>3</div>
+        <div class="boxes" id="box10" draggable = 'true'>4</div>
+        <div class="boxes" id="box11" draggable = 'true'>5</div>
+        <div class="boxes" id="box12" draggable = 'true'>6</div>
+    </div>
+    <div id="shitty" onclick="wiggle();">
+
+    </div>
+
+    <script>
+        var start = 0;
+
+/*const draggable = document.querySelectorAll('.boxes');
+const droppable = docuement.getElementById('#answser');
+
+draggable.forEach(box => {
+    box.addEventListener('dragstart', () => {
+        box.classList.add('dragging')
+    }
+)
+})
+    box.addEventListener('dragend', () => {
+        box.classList.remove('dragging')
+    })
+
+    droppable.addEventListener('dragover', e => {
+        e.preventDefault();
+        const box = document.querySelector('.dragging')
+        droppable.appendChild(box)
+    });
+      
+function green() {
+    document.getElementById('answer').style.backgroundColor = 'green';
+}
+
+function yellow() {
+    document.getElementById('answer').style.backgroundColor = 'yellow';
+}
+
+function back () {
+    document.getElementById('answer').style.backgroundColor = 'blue';
+}
+
+function slide() {
+ start = start + 200;
+   var moving = document.getElementById('answer').style.left = start + "px";
+   
+   
+  } 
+
+  function add() {
+      document.getElementById('answer').appendChild(boxing);
+  }
+
+
+  var yes = 'yes'
+
+  var adding = document.body.append(yes);
+  
+  var addBox = document.querySelector('#answer').append(yes);
+
+  document.querySelector('#answer').style.color = 'pink';
+  document.getElementById('answer').style.fontSize = '10rem';
+document.querySelector('body').style.color = 'orange';
+
+
+function allowDrop(ev) {
+    ev.preventDefault();
+}
+
+function drag(ev) {
+    ev.dataTransfer.setData('text', ev.target.id);
+}
+
+function drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData('text');
+    ev.target.appendChild(document.getElementById('data'));
+}
+
+        function removeBox() {
+        document.getElementById('board').removeChild(document.getElementById('box1'));
+    } 
+    function removeBox2() {
+        document.getElementById('board').removeChild(document.getElementById('box2'));
+    } 
+    function removeBox3() {
+        document.getElementById('board').removeChild(document.getElementById('box3'));
+    } 
+    function removeBox4() {
+        document.getElementById('board').removeChild(document.getElementById('box4'));
+    } 
+    function removeBox5() {
+        document.getElementById('board').removeChild(document.getElementById('box5'));
+    } 
+    function removeBox6() {
+        document.getElementById('board').removeChild(document.getElementById('box6'));
+    } 
+
+    function addBox() {
+    document.getElementById('answer').appendChild(document.getElementById('box7'));
+    }
+
+    function dice() {
+        var roll = Math.floor((Math.random() * 6) + 1);
+        console.log(roll);
+        
+        var replace = document.getElementById('rolly');
+        replace.innerHTML = roll;
+        
+        if (roll === 1) {
+            removeBox();
+            document.getElementById('answer').innerHTML = '1';
+            document.getElementById('answer').style.color = 'white';
+           
+        }
+
+        if (roll === 2) {
+            removeBox2();
+            document.getElementById('answer').innerHTML = '2';
+            document.getElementById('answer').style.color = 'grey';
+        }
+        if (roll === 3) {
+            removeBox3();
+            document.getElementById('answer').innerHTML = '3';
+            document.getElementById('answer').style.color = 'violet';
+        }
+        if (roll === 4) {
+            removeBox4();
+            document.getElementById('answer').innerHTML = '4';
+            document.getElementById('answer').style.color = 'red';
+        }
+        if (roll === 5) {
+            removeBox5();
+            document.getElementById('answer').innerHTML = '5';
+            document.getElementById('answer').style.color = 'black';
+        }
+        if (roll === 6) {
+            removeBox6();
+            document.getElementById('answer').innerHTML = '6';
+            document.getElementById('answer').style.color = '#333';
+        }
+
+     
+    }
+
+
+function letsTry() {
+    var changeRed = document.querySelectorAll('.boxes');
+for(r = 0; r < changeRed.length; r++) {
+    changeRed[r].className = 'learning';
+}
+
+
+
+}
+
+var burgundy = document.getElementById('tap');
+burgundy.addEventListener('click', letsTry, false);
+
+function wiggle() {
+    var boxing = document.querySelectorAll('.boxes');
+
+    for (var i = 0; i < boxing.length; i++) {
+        boxing[0].className = 'bitch';
+    } 
+  }*/
+
+    let tryThis = document.querySelectorAll('.boxes').forEach(whyTry => {
+        whyTry.addEventListener('click', e => {
+            whyTry.style.backgroundColor = 'white';
+        })
+    })
+
+    tryThis=document.querySelectorAll('.boxes').forEach(back => {
+        back.addEventListener('dblclick', e => {
+            back.style.backgroundColor = '#333';
+        })
+    })
+
+    var shrinkage = document.getElementById('answer');
+    shrinkage.addEventListener('click', e => {
+        shrinkage.style.backgroundColor = 'orange';
+    })
+    shrinkage.addEventListener('dblclick', e => {
+        shrinkage.style.backgroundColor = 'blue';
+    })
+
+
+    </script>
+     <script src="jquery-3.6.0.js">
+
+     </script>
+
+   <script>
+    
+$(document).ready(function() {
+
+          $('#board').slideUp(5000);
+           $('#board2').hide(3000).delay(3000).slideDown(5000);
+
+
+           var $addBox = $('#answer').clone();
+           $('body').append($addBox);
+        
+
+    var textColorIs = $('li').css({'color': 'brown', 'font-size': '3rem'});
+
+    var $changeSize = $('li').on('click', function() {
+       $(this).css({'color': 'chartreuse'});
+   })
+
+   var $changeSize = $('.boxes').on('click', function() {
+       $(this).css({'color': 'chartreuse'});
+   })
+
+   $('#spin').on('mouseover', function() {
+       $(this).css({'background-color':'pink'});
+   })
+   $('#spin').on('mouseout', function() {
+       $(this).css({'background-color':'red '});
+   })
+});
+
+   </script>
+</body>
+</html>

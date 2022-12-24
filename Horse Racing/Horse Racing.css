@@ -1,0 +1,247 @@
+@font-face {
+    font-family: racing;
+    src: url(./Audiowide-Regular.ttf);
+}
+html {
+    background-image: url(./Images/horsetry3.jpg);
+    
+}
+.lane {
+    height: 50px;
+    width: 100%;
+    outline: 2px solid black;
+}
+
+.horse {
+    height: 50px;
+    display: inline;
+    position: relative;
+}
+
+.laneNumber {
+    display: inline;
+    position: relative;
+    bottom: 5px;
+    font-size: 3rem;
+    text-shadow: .5px .5px #333;
+    font-family: racing;
+}
+
+#lane1 {
+    background-color: rgba(0, 128, 0, 0.377);
+}
+#lane2 {
+    background-color:rgba(255, 0, 0, 0.493);
+}
+
+#lane3 {
+    background-color:rgba(0, 0, 255, 0.39);
+}
+#lane4 {
+    background-color: rgba(255, 255, 0, 0.377);
+}
+#lane5 {
+    background-color:rgba(255, 192, 203, 0.459);
+}
+#lane6 {
+    background-color: rgba(0, 255, 213, 0.5);
+}
+#woodlochRacetrack {
+    text-align: center;
+    font-family: racing;
+    font-size: 2rem;
+}
+
+.dice {
+    height: 75px;
+    width: 75px;
+    outline: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: racing;
+    font-size: 3rem;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 3px 3px #333;
+    
+}
+
+#diceContainer {
+    display: flex;
+    position: relative;
+    top: 20px;
+    gap: 50px;
+    justify-content: center;
+}
+
+#buttonContainer {
+    display: flex;
+    position: relative;
+    gap: 50px;
+    top: 120px;
+    justify-content: center;
+}
+
+.buttons {
+    font-family: racing;
+    width: 100px;
+    border-radius: 10px;
+    outline: 2px solid black;
+}
+
+#finishLine {
+    height: 300px;
+    width: 16px;
+    border: 2px solid black;
+    position: absolute;
+    display: inline;
+    left: 95%;
+    
+    background-image: url(./Images/checkagain.jpg);
+    z-index: -1;
+   
+   
+}
+
+#rules {
+    position: absolute;
+    height: 70%;
+    width: 60%;
+    font-size: 1.25rem;
+    outline: 3px solid black;
+    background-color: white;
+    font-family: racing;
+    text-align: center;
+    z-index: 100;
+    left: 20%;
+    top: 20%;
+    border-radius: 10px;
+    
+}
+
+#guessHorse {
+    outline: 2px solid black;
+    border-radius: 10px;
+    font-family: racing;
+    text-align: center;
+    font-size: 1.25rem;
+    width: 100px;
+}
+
+#submit {
+    font-family: racing;
+    border-radius: 10px;
+    outline: 2px solid black;
+    width: 100px;
+}
+
+.winnersCircle {
+    position: absolute;
+    height: 50%;
+    width: 60%;
+    font-size: 3rem;
+    outline: 3px solid black;
+    background-color: white;
+    font-family: racing;
+    text-align: center;
+    z-index: 120;
+    left: 20%;
+    top: 20%;
+    border-radius: 10px;
+display: none;
+
+}
+
+@media only screen and (max-width: 400px) {
+    #finishLine {
+        top: 130px;
+    }
+
+
+    #rules {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (min-height: 850px) {
+    #finishLine {
+        top: 90px;
+    }
+}
+@media only screen and (min-height: 854px) {
+    #finishLine {
+        top: 130px;
+    }
+}
+@media only screen and (min-height: 925px) {
+    #finishLine {
+        top: 90px;
+    }
+}
+@media only screen and (min-height: 850px) {
+    .winnersCircle {
+        position: absolute;
+        top: 0px;
+    }
+}@media only screen and (min-width: 810px) {
+    #finishLine {
+        top: 90px;
+    }
+}
+@media only screen and (max-height: 428px) {
+    #woodlochRacetrack {
+        font-size: 1rem;
+    }
+
+    #finishLine {
+        height: 210px;
+        top: 47px;
+       left: 93%;
+    }
+    .lane {
+        height: 35px;
+    }
+
+    .horse {
+        height: 35px;
+    }
+
+    .laneNumber {
+        font-size: 1.5rem;
+    }
+
+    .dice {
+        height: 50px;
+        width: 50px;
+    }
+
+    #diceContainer {
+        justify-content: right;
+        gap: 25px;
+    }
+
+    #buttonContainer {
+justify-content: left;
+top: -20px;
+    }
+
+    #horse1 {
+        left: -200px;
+    }
+
+    .winnersCircle {
+        font-size: 2rem;
+    }
+    #submit {
+        top: -60px;
+        position: relative;
+        left: -100px;
+    }
+    #guessHorse {
+        position: relative;
+        left: 100px;
+        font-size: 1rem;
+        top: -5px;
+    }
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horse Race 1</title>
+<link rel="stylesheet" href="Horse Racing3.css">
+
+</head>
+<body>
+    <div id="rules"><p>Congratulations to our winners! The 3rd and final race we simply call, the "Cha-Cha Race".
+        This time, there a 4 dice. The white dice make your horse go forward while the black di makes your horse go backward!<br>
+        Enjoy watching your horse's dance all over the racetrack in this one!</p>
+        <form >
+            <input id="guessHorse" type="number"><br><br>
+            
+        </form>
+        <button id="submit">Let's Race!</button>
+
+
+    
+    </div>
+
+    <div id="winner1" style="background-color: rgba(0, 128, 0, 0.596);" class="winnersCircle"><br> Horse <br> #1 <br> wins!</div>
+    <div id="winner2" style="background-color: rgba(128, 0, 0, 0.596);" class="winnersCircle"><br> Horse <br> #2 <br> wins!</div>
+    <div id="winner3" style="background-color: rgba(0, 0, 255, 0.562);" class="winnersCircle"><br>Horse <br> #3 <br> wins!</div>
+    <div id="winner4" style="background-color: rgba(255, 255, 0, 0.527);" class="winnersCircle"><br>Horse <br> #4 <br> wins!</div>
+    <div id="winner5" style="background-color: rgba(255, 192, 203, 0.527);" class="winnersCircle"><br>Horse <br> #5 <br> wins!</div>
+    <div id="winner6" style="background-color: rgba(0, 128, 122, 0.596);" class="winnersCircle"><br>Horse <br> #6 <br> wins!</div>
+    <div id="woodlochRacetrack">Welcome to Woodloch's<br>Racetrack!</div>
+    <div id="container">
+        <div class="lane" id="lane1">
+            <div ><p class="laneNumber" style="color: green; ">1</p><img style="left:20px;" class="horse" id="horse1" src="Images/greenHorse1.png"></div>
+        </div>
+        <div class="lane" id="lane2">
+            <div ><p class="laneNumber"style="color: red;">2</p><img class="horse" id="horse2" src="./Images/redHorse2.png"> </div>
+        </div>
+        <div class="lane" id="lane3">
+            <div ><p class="laneNumber"style="color: blue;">3</p><img class="horse" id="horse3" src="./Images/blueHorse3.png"> </div>
+        </div>
+        <div class="lane" id="lane4">
+            <div ><p class="laneNumber" style="color: yellow;">4</p><img class="horse" id="horse4" src="./Images/yellowHorse4.png"> </div>
+        </div>
+        <div class="lane" id="lane5">
+            <div ><p class="laneNumber" style="color: pink;">5</p><img  class="horse" id="horse5" src="./Images/pinkHorse5.png"> </div>
+        </div>
+        <div class="lane" id="lane6">
+            <div ><p class="laneNumber"style="color: rgba(0, 255, 213, 1);">6</p><img class="horse" id="horse6" src="./Images/aquaHorse6.png"> </div>
+        </div>
+<div id="finishLine"></div>
+    </div>
+
+    <div id="diceContainer">
+
+
+        <div class="dice"  id="dice1">?</div>
+        <div class="dice" id="dice2">?</div>
+        <div class="dice" id="dice3">?</div>
+        <div class="dice" id="dice4" style="background-color: black; color: white;">?</div>
+
+    </div>
+    <div id="buttonContainer">
+        <button class="buttons" id="roll">Roll</button>
+        <button class="buttons" id="raceAgain">Race Again</button>
+        <button class="buttons" id="nextRace">Home</button>
+    </div>
+
+<audio id='horseMusic' src="./William Tell_60_MP3.mp3"></audio>
+    <script src="Horse Racing3.js">
+
+    </script>
+</body>
+</html>

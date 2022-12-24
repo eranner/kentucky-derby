@@ -1,0 +1,21 @@
+<kids>
+    <kid>
+        <name>EJ</name>
+        <age>3</age>
+        <hair>Brown</hair>
+        <eyecolor>Brown</eyecolor>
+    </kid>
+    <kid>
+        <name>Holly</name>
+        <age>2</age>
+        <hair>Blonde</hair>
+        <eyecolor>Blue</eyecolor>
+    </kid>
+      <kid>
+        <name>Warren</name>
+        <age>7 months</age>
+        <hair>Blonde/Brown</hair>
+        <eyecolor>Grey</eyecolor>
+    </kid>
+
+</kids>
